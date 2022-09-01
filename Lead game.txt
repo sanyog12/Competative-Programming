@@ -1,0 +1,48 @@
+https://www.codechef.com/problems/TLG?tab=statement
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+	// your code goes here
+    int n;
+    cin>>n;
+    int c1 = 0, c2 = 0, max = 0 ,leadp = 0 ;
+    for (int i = 0; i <= n; i++)
+    {
+        int a ,b;
+        cin>>a>>b;
+        c1 += a;
+        c2 += b;
+        int lead;
+        lead = 0;
+        if(a > b)
+        {
+            
+            lead = c1 - c2;
+            if(lead > max)
+            {
+                max = lead;
+                leadp = 1;
+            }
+        }
+        
+        else
+        {
+            int lead;
+            lead = c2 - c1;
+            if(lead > max)
+            {
+                max = lead;
+                leadp = 2;
+            }
+        }
+        
+            
+        
+    }
+    cout<<leadp <<" "<< max;
+        
+	return 0;
+}
