@@ -1,0 +1,16 @@
+https://leetcode.com/problems/reverse-string/submissions/
+
+
+class Solution {
+public:
+    void reverseString(vector<char>& s) {
+        int chracterCount = 0;
+        int size = s.size();
+        int maxSize = size - 1;
+        while(maxSize > chracterCount){
+            swap(s[chracterCount],s[maxSize]);
+            ++chracterCount;
+            --maxSize;
+        }
+    }
+};
