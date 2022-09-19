@@ -1,0 +1,34 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+void printArray(int arr[],int  size){
+    for(int i = 0; i < size; i++){
+        cout<<arr[i];
+    }
+}
+
+void swaparray(int arr[], int  size){
+    for (int i = 0; i < size; i+=2){
+        if(i+1 < size){
+        swap(arr[i],arr[i+1]); 
+            
+        }
+    }
+}
+
+int main()
+{
+    int arr[8] = {1,2,3,4,5,6,7,8}; // output:- 2,1,4,3,6,5,8,7 
+    swaparray(arr, 8);
+    printArray(arr, 8);
+
+    return 0;
+}
