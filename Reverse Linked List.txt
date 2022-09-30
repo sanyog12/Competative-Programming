@@ -1,0 +1,22 @@
+https://www.codingninjas.com/codestudio/problems/reverse-linked-list_920513?leftPanelTab=1
+
+
+
+Node* reverseLinkedList(Node *head)
+{
+    // Write your code here
+    
+    if(head == NULL || head -> next == NULL){
+        return head;
+    }
+    Node* previous = NULL;
+    Node* curr = head;
+    Node* forward;
+    while(curr != NULL){
+        forward = curr -> next;
+        curr -> next = previous;
+        previous = curr;
+        curr = forward;
+    }
+    return previous;
+}
