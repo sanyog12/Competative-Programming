@@ -1,0 +1,29 @@
+https://www.codingninjas.com/codestudio/problems/count-leaf-nodes_893055?leftPanelTab=1
+
+
+
+
+
+
+
+
+void inorder(BinaryTreeNode<int> *root,int &count){
+    if(root == NULL){
+        return;
+    }
+    
+    inorder(root->left, count);
+    
+    if(root->left == NULL && root->right == NULL){
+    count ++;
+    }
+    
+    inorder(root->right, count);
+}
+
+int noOfLeafNodes(BinaryTreeNode<int> *root){
+    // Write your code here.
+    int count = 0;
+    inorder(root,count);
+    return count;
+}
