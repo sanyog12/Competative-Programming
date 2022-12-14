@@ -1,79 +1,75 @@
-/******************************************************************************
+/*
+    Your Trie object will be instantiated and called as such:
+    Trie* obj = new Trie();
+    obj->insert(word);
+    bool check2 = obj->search(word);
+    bool check3 = obj->startsWith(prefix);
+ */
 
-Welcome to GDB Online.
-GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
-C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
-Code, Compile, Run and Debug online from anywhere in world.
-
-*******************************************************************************/
-#include <iostream>
-
-using namespace std;
 class TrieNode{
     public:
-    char data;
-    TrieNode *children[26];
-    bool isTerminal;
-    
-    TrieNode(char ch){
-        data = ch;
-        for(int i = 0; i < 26; i++){
-            children[i] = NULL;
+        TrieNode* links[26];
+        bool isTerminal=false;
+        bool contains(char ch){
+            return (links[ch - 'a']!=NULL);
         }
-        isTerminal = false;
-    }
-    void insertUtil(TrieNode *root, string Word){
-        if(Word.length() == 0){
-            root->isTerminal = true;
-            return;
+        void put(char ch,TrieNode* node){
+            links[ch-'a'] = node;
         }
-        
-        int index = Word[0]-"A";
-        TrieNode* child;
-        
-        if(root->children[index]!=NULL){
-            child = root->children[index];
+        TrieNode* get(char ch){
+            return links[ch - 'a'];
         }
-        
-        else{
-            child = new TrieNode(Word[0]);
-            root->children[index] = child;
+        bool setEnd(){
+            isTerminal = true;
         }
-        
-        insertUtil(child, Word.substr(1));
-    }
-    void insertWord(string Word){
-        insertUtil(root,Word);
-    }
-    
-    bool searchUtil(TrieNode* root, string Word){
-        
-        if(Word.length() == 0){ 
-            return root->isTerminal;
+        bool isEnd(){
+            return isTerminal;
         }
-        
-        int index = Word[0]-"A";
-        TrieNode* child;
-        
-        if(root->children[index]!=NULL){
-            child = root->children[index];
-        }
-        
-        else{
-           return 0;
-        }
-        
-        return searchUtil(child, Word.substr(1));
-    }
-    bool searchWord(string Word){
-        return searchUtil(root, Word);
-    }
-    
 };
 
-int main()
-{
-    cout<<"Hello ";
+class Trie {
+    private:
+        TrieNode* root;
+public:
 
-    return 0;
-}
+    /** Initialize your data structure here. */
+    Trie() {
+        root = new TrieNode();
+    }
+
+    /** Inserts a word into the trie. */
+    void insert(string word) {
+        TrieNode* node = root;
+        for(int i=0;i<word.length();i++){
+            if(!node->contains(word[i])){
+                node->put(word[i],new TrieNode());
+            }
+            node=node->get(word[i]);
+        }
+        node->setEnd();
+    }
+
+    /** Returns if the word is in the trie. */
+    bool search(string word) {
+        TrieNode* node=  root;
+        for(int i=0;i<word.length();i++){
+            if(!node->contains(word[i])){
+                return false;
+            }
+            node = node->get(word[i]);
+        }
+        return node->isEnd();
+    }
+
+    /** Returns if there is any word in the trie that starts with the given prefix. */
+    bool startsWith(string word) {
+        TrieNode* node=  root;
+        for(int i=0;i<word.length();i++){
+            if(!node->contains(word[i])){
+                return false;
+            }
+            node = node->get(word[i]);
+        }
+        return true;
+    }
+};
