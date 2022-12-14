@@ -1,0 +1,79 @@
+/******************************************************************************
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+*******************************************************************************/
+#include <iostream>
+
+using namespace std;
+class TrieNode{
+    public:
+    char data;
+    TrieNode *children[26];
+    bool isTerminal;
+    
+    TrieNode(char ch){
+        data = ch;
+        for(int i = 0; i < 26; i++){
+            children[i] = NULL;
+        }
+        isTerminal = false;
+    }
+    void insertUtil(TrieNode *root, string Word){
+        if(Word.length() == 0){
+            root->isTerminal = true;
+            return;
+        }
+        
+        int index = Word[0]-"A";
+        TrieNode* child;
+        
+        if(root->children[index]!=NULL){
+            child = root->children[index];
+        }
+        
+        else{
+            child = new TrieNode(Word[0]);
+            root->children[index] = child;
+        }
+        
+        insertUtil(child, Word.substr(1));
+    }
+    void insertWord(string Word){
+        insertUtil(root,Word);
+    }
+    
+    bool searchUtil(TrieNode* root, string Word){
+        
+        if(Word.length() == 0){ 
+            return root->isTerminal;
+        }
+        
+        int index = Word[0]-"A";
+        TrieNode* child;
+        
+        if(root->children[index]!=NULL){
+            child = root->children[index];
+        }
+        
+        else{
+           return 0;
+        }
+        
+        return searchUtil(child, Word.substr(1));
+    }
+    bool searchWord(string Word){
+        return searchUtil(root, Word);
+    }
+    
+};
+
+int main()
+{
+    cout<<"Hello ";
+
+    return 0;
+}
