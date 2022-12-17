@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int num = 113, r, sum=0;
+    int x = num;
+    while(num>0){
+        r = num%10;
+        sum = sum + (r*r*r);
+        num = num/10;
+        
+    }
+    if(x == sum){
+        cout<<"number is armstrong";
+    }
+    else{
+        cout<<"number is not armstrong";
+    }
+    
+
+    return 0;
+}
