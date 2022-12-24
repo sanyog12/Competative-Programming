@@ -1,0 +1,56 @@
+#include<iostream>
+
+using namespace std;
+
+// operator overloading - Advance 
+
+/*
+
+    C++ & DataStructure - Logic Working Computers
+    Java - Actuall Development : Android Apps , Server Side Programming, Backends, Frontend.
+    Python - AI ML Statistics. 
+                        
+    Khan Acad - 
+        Backend Python 22 secs per 1000 - Interpreted
+        Go lang- 0.23 secs  - Static Typed
+
+    C,C++,Go,Java - Compiled/ Static typed 
+    Analyze Binary Format (package)
+    Python/R - interpreted 
+
+    Startup - Python //Slow 
+    
+
+    Python AI ML - Java C++ 
+    Infrastructure 
+    Google Search Engine - c++ ai ml
+    tensorflow ,opencv - c++
+    python bindings
+
+*/
+
+
+class Sanyog
+{
+    public:
+    int no;
+
+    Sanyog(int n)
+    {
+        no = n;
+    }
+
+
+
+};
+
+int main()
+{
+    Sanyog obj1(50);
+    Sanyog obj2 =obj1 ;
+    
+    cout<<"\n Data obj1 : "<<obj1.no;
+    cout<<"\n Data obj2 : "<<obj2.no;
+
+    return 1;
+}
