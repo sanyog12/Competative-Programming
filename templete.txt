@@ -1,0 +1,40 @@
+//Templates
+#include<iostream>
+
+using namespace std;
+
+template<class T,class U>
+void add(T a,U b)
+{
+    T c = a + b;
+    cout<<"\n template Addition is : "<<c;
+}
+template<class s, class t>
+void sub( s a, t b){
+   s d=a-b;
+      cout<<"\n template sub is : "<<d;
+}
+template<class y, class z>
+void mul(y a, z b){
+   y e=a*b;
+    cout<<"\n the mul is :"<<e<<endl;
+}
+
+template<class w, class x>
+void div(w a, x b){
+   cout<<"runnig";                                                          
+   w k=(w)(a/b);
+
+ cout<<"\n the div is :"<<k<<endl;
+}
+
+
+int main()
+{
+    double obj;
+    add(1.0,2.2);
+    sub(20,10);
+    mul(10,20);
+    div(20.0,10);
+    return 1;
+}
