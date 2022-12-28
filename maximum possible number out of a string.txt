@@ -1,0 +1,23 @@
+// program to print maximum possible number out of a string
+
+
+#include <iostream>
+#include<algorithm>
+
+#include<string>
+
+using namespace std;
+
+
+int main()
+{
+
+    string str = "345436342345";
+
+    sort(str.begin(), str.end(), greater<int>());
+
+    cout<<str;
+
+    return 0;
+
+}
