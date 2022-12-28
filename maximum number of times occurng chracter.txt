@@ -1,0 +1,45 @@
+// program to print maximum number of times occurng chracter
+
+
+#include <iostream>
+
+#include<algorithm>
+
+#include<string>
+
+using namespace std;
+
+
+int main()
+{
+
+    string s = "laskdnfioesdfnbfs";
+
+    int freq[26] = {0};
+
+    for(int i = 0; i < s.size(); i++){
+
+        freq[s[i]-'a']++;
+
+    }
+
+    int max = 0;
+
+    char ans = -1;
+
+    for(int i = 0; i < 26; i++){
+
+        if(freq[i] > max){
+
+            max = freq[i];
+
+            ans = i + 'a';
+
+        }
+
+    }
+
+    cout<<max<<" "<<ans;
+
+    return 0;
+}
