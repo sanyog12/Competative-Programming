@@ -1,4 +1,4 @@
-//get bit, set bit and clear bit
+//get bit, set bit, clear bit and update bit
 
 
 
@@ -24,6 +24,12 @@ int clearBit(int num, int pos){
     return (num & mask);
 }
 
+int updateBit(int num, int pos, int value){
+   int mask = ~(1 << pos);
+   num = num & mask;
+   return (num | (value << pos));
+}
+
 
 
 
@@ -37,7 +43,8 @@ int main()
   
                                                                                  //(3 2 1 0)
   cout<<"clearBit = "<<clearBit(5,2)<<endl; // here numbering starts form 0 for eg: 0 1 0 1
-
+                                                                                 //(3 2 1 0)
+  cout<<"updateBit = "<<updateBit(5,1,1)<<endl; // here numbering starts form 0 for eg: 0 1 0 1
     return 0;
 
 }
