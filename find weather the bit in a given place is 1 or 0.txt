@@ -1,0 +1,34 @@
+//Program to find weather the bit in a given place is 1 or 0
+
+
+#include <iostream>
+
+#include<string>
+
+using namespace std;
+
+
+int main()
+{
+
+    int i = 01010,n;
+
+    cin>>n;
+
+    i = i << n-1;
+
+    if(i & 1){
+
+        cout<<"1";
+
+    }
+
+    else{
+
+        cout<<"0";
+
+    }
+
+    return 0;
+
+}
