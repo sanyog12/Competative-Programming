@@ -1,0 +1,46 @@
+//print number of 1s in a number
+
+
+
+
+#include <iostream>
+
+
+
+using namespace std;
+
+
+
+int numberOf1s(int n){
+
+
+    int count = 0;
+
+
+    while(n){
+
+
+        n = n & (n-1);
+
+
+        count++;
+
+    }
+
+
+    return count;
+
+}
+
+
+
+int main()
+{
+
+
+    cout<<(numberOf1s(34));
+
+
+    return 0;
+
+}
