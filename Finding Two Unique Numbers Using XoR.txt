@@ -9,7 +9,7 @@
 using namespace std;
 
 
-int setbit(int n, int pos){
+int setbit(int n, int pos){     //Check whether the bit is set or not
 
 
     return ((n & (1<<pos)) != 0);
@@ -25,7 +25,7 @@ void xorsum(int arr[], int size){
     int xorOfFirst = 0;
 
 
-    for(int i = 0; i < size; i++){
+    for(int i = 0; i < size; i++){      //Take xor of all number
 
 
         xorOfFirst = xorOfFirst ^ arr[i];
@@ -33,7 +33,7 @@ void xorsum(int arr[], int size){
 
     }
 
-    int tempXor = xorOfFirst;
+    int tempXor = xorOfFirst;  
 
 
     int setBit = 0;
@@ -42,7 +42,7 @@ void xorsum(int arr[], int size){
     int pos = 0;
 
 
-    while(setBit != 1){
+    while(setBit != 1){     //check whether setbit is 1 or 0
 
 
         setBit = xorOfFirst & 1;
@@ -66,7 +66,7 @@ void xorsum(int arr[], int size){
         if(setbit(arr[i], pos -1)){
 
 
-            newXor = newXor ^ arr[i];
+            newXor = newXor ^ arr[i];       /Get xor value of all the 
 
 
         }
