@@ -1,0 +1,100 @@
+
+
+
+
+#include <iostream>
+
+
+
+using namespace std;
+
+
+int setbit(int n, int pos){
+
+
+    return ((n & (1<<pos)) != 0);
+
+
+}
+
+
+
+void xorsum(int arr[], int size){
+
+
+    int xorOfFirst = 0;
+
+
+    for(int i = 0; i < size; i++){
+
+
+        xorOfFirst = xorOfFirst ^ arr[i];
+
+
+    }
+
+    int tempXor = xorOfFirst;
+
+
+    int setBit = 0;
+
+
+    int pos = 0;
+
+
+    while(setBit != 1){
+
+
+        setBit = xorOfFirst & 1;
+
+
+        pos ++;
+
+
+        xorOfFirst = xorOfFirst >> 1;
+
+
+    }
+
+
+    int newXor = 0;
+
+
+    for(int i = 0; i < size; i++){
+
+
+        if(setbit(arr[i], pos -1)){
+
+
+            newXor = newXor ^ arr[i];
+
+
+        }
+
+
+    }
+
+    cout<<newXor<<endl;
+
+
+    cout<<(tempXor ^ newXor);
+
+
+}
+
+
+
+int main()
+{
+
+
+    int arr[8]={1,2,3,1,2,3,4,5};
+
+
+    xorsum(arr,8);
+
+
+
+    return 0;
+
+}
