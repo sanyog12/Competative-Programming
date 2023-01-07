@@ -1,0 +1,32 @@
+Requirement analysis:
+Software req:
+1]vscode
+2]postMan
+3]MongoDB Compass
+
+Hardware:
+1]2gb ram 
+2]500 gb hd
+3]i3 processor
+
+Technical stuff:
+1]Nodejs 
+2]Express
+3]MongoDB
+
+
+related work:
+we are sending a mail according to  intrest of intrested costumers we are categorising intrests and sending a mail with a link in it and
+the customer can click the link and can see the related the stuff.
+
+Implementation details:
+
+We have created the seperate modules and a structurewise folders to help building our services in sutaible manner as well as we have 3 
+environmen default, dev, prod so we can distribute it as seperate environment such as dev and production.
+
+
+con:
+we have sucessfull saved and recived via Gmail.
+
+fu scope
+It will help for small business to increase their sales and customer aquisiton
