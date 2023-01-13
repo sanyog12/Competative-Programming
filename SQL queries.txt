@@ -1,0 +1,27 @@
+select * from worker;
+
+select * from worker WHERE SALARY > 10000;
+
+select * from worker WHERE DEPARTMENT = 'HR';
+
+select * from worker where salary between 80000 and 300000;
+
+
+SELECT * FROM worker Where department ='HR' OR department ='admin';
+
+SELECT * FROM worker where FIRST_NAME  like '% _';
+
+select * from worker order by salary desc;
+
+SELECT DISTINCT(department) FROM worker;
+
+SELECT department, count(DEPARTMENT) FROM worker GROUP BY department;
+
+SELECT department, avg(salary) from worker group by DEPARTMENT;
+
+select department, count(department) from worker group by department having count(DEPARTMENT) > 1;
+
+select salary, avg(salary) from worker group by department;
+
+select department, count(department) from worker group by DEPARTMENT having count(DEPARTMENT) > 2;
+
