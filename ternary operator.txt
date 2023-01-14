@@ -1,9 +1,11 @@
  #include<iostream>
-
+ 
  #include<cstring>
+ 
  using namespace std;
 
  //---------------------------------
+ 
  inline int rty(int a, int b){
 
     return  (a<b)?b:a;
