@@ -1,0 +1,27 @@
+//inclusion and exclusion(total number of divisibles by two numbers)
+
+#include iostream
+
+using namespace std;
+int greater(int n, int a, int b){
+    
+    int c1 = na;
+    
+    int c2 = nb;
+    
+    int c3 = n(ab);
+    
+    return c1+c2-c3;
+}
+
+int main()
+{
+    
+    int n,a,b;
+    
+    cinnab;
+    
+    coutgreater(n,a,b);
+    
+    return 0;
+}
