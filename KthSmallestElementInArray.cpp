@@ -1,6 +1,7 @@
 https://www.codingninjas.com/codestudio/problems/kth-smallest-and-largest-element-of-array_1115488?leftPanelTab=1
 
 
+    
 
 #include <bits/stdc++.h>
 vector<int> kthSmallLarge(vector<int> &arr, int n, int k)
